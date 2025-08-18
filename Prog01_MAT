@@ -1,0 +1,57 @@
+package aula1;
+
+import java.io.*;
+import java.util.Scanner;
+
+/**
+ *
+ * @author 323220287
+ */
+public class Aula1 {
+
+    public static void main(String[] args) {
+        
+        double x,y;
+        double result = 0;
+        byte op;
+        Scanner ler = new Scanner(System.in);
+        
+        System.out.println("Escreva seu primeiro numero:");
+        x=ler.nextByte();
+        
+        System.out.println("Escreva seu segundo numero:");
+        y=ler.nextByte();
+        
+        System.out.println("qual operacao voce fara:");
+        System.out.println("1 - Adicao");
+        System.out.println("2 - Subtracao");
+        System.out.println("3 - Multiplicacao");
+        System.out.println("4 - Divisao");
+        op=ler.nextByte();
+        
+        switch (op) {
+            case 1:
+                result = x + y;
+                break;
+            case 2:
+                result = x - y;
+                break;
+            case 3:
+                result = x * y;
+                break;
+            case 4:
+                if (y != 0) {
+                    result = x / y;
+                } else {
+                    System.out.println("Erro: Divisão por zero.");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Operação inválida.");
+                return;
+        }
+
+        System.out.println("Resultado: " + result);
+    }
+}
